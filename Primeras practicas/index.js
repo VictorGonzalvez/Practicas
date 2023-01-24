@@ -1,3 +1,4 @@
+import x from './add.js';
 /* 
 Creación de elementos en el dom
 const title = document.createElement('h1')
@@ -34,3 +35,29 @@ else
 */
 button.style = `background: ${bool ? 'blue' : background}; color:  ${color}; width = 50px`
 document.body.append(button);
+
+/*Forma basica para manejar arrays
+const numbers = [1,2,3,4];
+numbers.forEach(function(number){
+    console.log(number);
+})
+
+Metodo map para recorrer el array, mantener el primero y tener la posibilidad de modificarlo.
+const numbers = [1,2,3,4]
+const newNumbers = numbers.map(function (number){
+    return `Hola ${number}`
+})
+console.log(numbers)
+console.log(newNumbers)
+--Metodos para recorrer pueden ser .find, .filter
+.concat para combinar arrays
+(...array1, ...array2) para concatenar arreglos u objetos
+
+
+
+*/
+
+var result = add(10,20)
+console.log(add(10,20))
+console.log(multiply(10,20))
+console.log(x)
