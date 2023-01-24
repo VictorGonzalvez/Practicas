@@ -18,11 +18,19 @@ Para insertar html
 document.body.innerHTML();
  */
 
+//String literals
+
 const background = 'blue'
 const color = 'white'
 const button = document.createElement("button");
 button.innerText = "Click me";
-//String literals
+bool= true;
+/*if(bool)
+    background : "blue"
+else
+    background : background
+    
 
-button.style = `background: ${background}; color:  ${color}; width = 50px`
+*/
+button.style = `background: ${bool ? 'blue' : background}; color:  ${color}; width = 50px`
 document.body.append(button);
