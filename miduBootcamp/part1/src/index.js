@@ -1,55 +1,55 @@
-import React, { version } from 'react'
+import React, { useState } from 'react'
 import ReactDOM from 'react-dom'
 
-
-const Title = ({course}) => <h1>{course}</h1>
-const Parrafo= ({frase,numero} )=> <p>{frase}  {numero}</p>
-const Calcular = ({a,b,c}) => <p>Number of excercises {a+b+c}</p>
-/*Parte React
 const App = () => {
-  const course = 'Half Stack application development'
-  const part1 = 'Fundamentals of React'
-  const exercises1 = 10
-  const part2 = 'Using props to pass data'
-  const exercises2 = 7
-  const part3 = 'State of a component'
-  const exercises3 = 14
+  // save clicks of each button to its own state
+  const [good, setGood] = useState(0)
+  const [neutral, setNeutral] = useState(0)
+  const [bad, setBad] = useState(0)
+  const [total, setTotal] = useState(0)
+  const [promedio, setPromedio] = useState(0)
+  const Title = ({prop}) => <h1>{prop}</h1>
+  const Estado = ({frase, contador}) => <p>{frase} {contador}</p>
+  const handleClickGood = () =>{
+    setGood(good+1);
+    setTotal(total + 1);
+    setPromedio(promedio + 1)
+    console.log(total)
+  }
+  const handleClickNeutral = () =>{
+    setNeutral(neutral+1);
+    setTotal(total + 1);
+  }
+  const handleClickBad = () =>{
+    setBad(bad+1);
+    setTotal(total + 1);
+    setPromedio(promedio - 1)
+  }
+  
+  
+  /*Amplíe su aplicación para que muestre más estadísticas sobre los comentarios recopilados:
+   el número total de comentarios recopilados, la puntuación promedio 
+  (buena: 1, neutral: 0, mala: -1) y el porcentaje de comentarios positivos.
+  */
+  
+
   return (
     <div>
-      <Title course = {course}/>
-      
-        <Parrafo frase={part1} numero = {exercises1} />   
-        <Parrafo frase={part2} numero = {exercises2} />
-        <Parrafo frase={part3} numero = {exercises3} />
-        <Calcular a={exercises1} b={exercises2} c={exercises3} />
+      <Title prop = 'Give Feedback'/>
+      <button onClick={handleClickGood}>good</button>
+      <button onClick={handleClickNeutral}>neutral</button>
+      <button onClick={handleClickBad}>bad</button>
+      <Title prop = 'Statistics'/>
+      <Estado frase = 'Good' contador = {good}/>
+      <Estado frase = 'Neutral' contador = {neutral}/>
+      <Estado frase = 'Bad' contador = {bad}/>
+      <Estado frase = 'All' contador= {bad + neutral + good}/>
+      <Estado frase = 'Promedio' contador = {promedio/total}/>
+      <Estado frase = 'Porcentaje de positivos' contador={good*100/total} />
     </div>
   )
 }
-*/
-const App = () => {
-  const course = 'Half Stack application development'
-  const part1 ={
-    name: 'Fundamentals of React',
-    excercises: 10
-  }
-  const part2 ={
-    name: 'Using props to pass data',
-    excercises: 7
-  }
-  const part3 ={
-    name: 'State of a component',
-    excercises: 14
-  }
-  return(
-    <div>
-      <Title course={course}/>
-      <Parrafo frase={part1.name} numero={part1.excercises}/>
-      <Parrafo frase={part2.name} numero={part2.excercises}/>
-      <Parrafo frase={part3.name} numero={part3.excercises}/>
-      <Calcular a={part1.excercises} b={part2.excercises} c={part3.excercises}/>
-    </div>
-  )
 
-}
-
-ReactDOM.render(<App />, document.getElementById('root'))
+ReactDOM.render(<App />, 
+  document.getElementById('root')
+)

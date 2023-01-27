@@ -1,8 +1,7 @@
-import x from './add.js';
+
+
 /* 
 Creación de elementos en el dom
-const title = document.createElement('h1')
-title.innerText = 'Hola mundo'
 
 const button = document.createElement('button');
 button.innerText = 'click'
@@ -19,6 +18,8 @@ Para insertar html
 document.body.innerHTML();
  */
 
+
+
 //String literals
 
 const background = 'blue'
@@ -26,12 +27,11 @@ const color = 'white'
 const button = document.createElement("button");
 button.innerText = "Click me";
 bool= true;
+
 /*if(bool)
     background : "blue"
 else
     background : background
-    
-
 */
 button.style = `background: ${bool ? 'blue' : background}; color:  ${color}; width = 50px`
 document.body.append(button);
@@ -57,7 +57,26 @@ console.log(newNumbers)
 
 */
 
-var result = add(10,20)
-console.log(add(10,20))
-console.log(multiply(10,20))
-console.log(x)
+const prueba = [
+    {letra : "a", numero : 1},
+    {letra : "b", numero : 2}
+]
+const title = document.createElement('h1')
+title.innerText = 'Hola mundo'
+document.body.append(title)
+
+const parrafo = document.createElement('p')
+prueba.forEach(element => {
+    console.log(element)
+    parrafo.innerText = element.letra
+    document.body.append(parrafo)
+})
+for (let i = 0; i < prueba.length; i++) {
+    const element = prueba.letra[i];
+    parrafo.innerText = element;
+    document.body.append(parrafo)
+
+    
+}
+
+
